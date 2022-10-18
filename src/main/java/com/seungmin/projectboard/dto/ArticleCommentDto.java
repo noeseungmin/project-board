@@ -1,11 +1,10 @@
 package com.seungmin.projectboard.dto;
 
-import java.io.Serializable;
+import com.seungmin.projectboard.domain.Article;
+import com.seungmin.projectboard.domain.ArticleComment;
+
 import java.time.LocalDateTime;
 
-/**
- * A DTO for the {@link com.seungmin.projectboard.domain.ArticleComment} entity
- */
 public record ArticleCommentDto(
         LocalDateTime createdAt,
         String createdBy,
@@ -14,6 +13,6 @@ public record ArticleCommentDto(
         String content
 ) {
     public static ArticleCommentDto of(LocalDateTime createdAt, String createdBy, LocalDateTime modifiedAt, String modifiedBy, String content) {
-    return new ArticleCommentDto(createdAt, createdBy, modifiedAt, modifiedBy, content);
+        return new ArticleCommentDto(createdAt, createdBy, modifiedAt, modifiedBy, content);
     }
 }
