@@ -22,7 +22,6 @@ public class ArticleService {
     @Transactional(readOnly = true)
     public Page<ArticleDto> searchArticles(SearchType title, String search_keyword) {
         return Page.empty();
-
     }
 
     @Transactional(readOnly = true)

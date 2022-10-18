@@ -1,11 +1,5 @@
 package com.seungmin.projectboard.dto;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
-/**
- * A DTO for the {@link com.seungmin.projectboard.domain.Article} entity
- */
 public record ArticleUpdateDto(
         String title,
         String content,
