@@ -23,7 +23,7 @@ public class MainControllerTest {
         this.mvc = mvc;
     }
 
-    @DisplayName("[view][GET] 루트 페이지 -> 게시글 리스트 (게시판) 페이지 Redirection")
+
     @Test
     void givenNothing_whenRequestR_thenRedirectionA() throws Exception {
 
@@ -33,4 +33,5 @@ public class MainControllerTest {
                 .andExpect(forwardedUrl("/articles"))
                 .andDo(MockMvcResultHandlers.print());
     }
+
 }

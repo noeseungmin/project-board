@@ -47,7 +47,7 @@ public class ArticleServiceTest {
 
     @DisplayName("검색어와 함께 게시글을 검색하면, 게시글 페이지를 반환한다.")
     @Test
-    void givenSearchParameters_whenSearchingArticles_thenReturnsArticlePage() {
+    void givenSearchP_whenSearchingA_thenReturnsA() {
         // Given
         SearchType searchType = SearchType.TITLE;
         String searchKeyword = "title";
@@ -82,7 +82,7 @@ public class ArticleServiceTest {
 
     @DisplayName("없는 게시글을 조회하면, 예외를 던진다.")
     @Test
-    void givenNonexistentArticleId_whenSearchingArticle_thenThrowsException() {
+    void givenN_whenSearchingA_thenThrowsException() {
         // Given
         Long articleId = 0L;
         given(articleRepository.findById(articleId)).willReturn(Optional.empty());
@@ -126,7 +126,7 @@ public class ArticleServiceTest {
 
     @DisplayName("없는 게시글의 수정 정보를 입력하면, 경고 로그를 찍고 아무 것도 하지 않는다.")
     @Test
-    void givenNonexistentArticleInfo_whenUpdatingArticle_thenLogsWarningAndDoesNothing() {
+    void givenN_whenUpdatingA_thenLogsWarning() {
         // Given
         ArticleDto dto = createArticleDto("새 타이틀", "새 내용", "#springboot");
         given(articleRepository.getReferenceById(dto.id())).willThrow(EntityNotFoundException.class);
@@ -148,6 +148,21 @@ public class ArticleServiceTest {
         sut.deleteArticle(1L);
 
         then(articleRepository).should().deleteById(articleId);
+    }
+
+    @DisplayName("게시글 수를 조회하면, 게시글 수를 반환한다")
+    @Test
+    void givenN_whenCountingA_thenReturnsA() {
+        // Given
+        long expected = 0L;
+        given(articleRepository.count()).willReturn(expected);
+
+        // When
+        long actual = sut.getArticleCount();
+
+        // Then
+        assertThat(actual).isEqualTo(expected);
+        then(articleRepository).should().count();
     }
 
 

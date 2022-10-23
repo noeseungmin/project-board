@@ -39,11 +39,14 @@ class JpaRepositoryTest {
     @Test
     void givenTestData_whenSelecting_thenWorksFine(){
 
-        List<Article> articles = articleRepository.findAll();
+        long previousCount = articleRepository.count();
+        UserAccount userAccount = userAccountRepository.save(UserAccount.of("Win", "pw", null, null, null));
+        Article article = Article.of(userAccount, "new article", "new content", "#spring");
 
-        assertThat(articles)
-                .isNotNull()
-                .hasSize(0);
+        articleRepository.save(article);
+
+        // Then
+        assertThat(articleRepository.count()).isEqualTo(previousCount + 1);
     }
 
     @DisplayName("insert 테스트")
