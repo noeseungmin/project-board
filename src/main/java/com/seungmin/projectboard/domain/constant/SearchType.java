@@ -1,4 +1,4 @@
-package com.seungmin.projectboard.domain.type;
+package com.seungmin.projectboard.domain.constant;
 
 import lombok.Getter;
 
