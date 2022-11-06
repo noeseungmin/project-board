@@ -1,6 +1,7 @@
 package com.seungmin.projectboard.controller;
 
 import com.seungmin.projectboard.config.SecurityConfig;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class AuthContorllerTest {
     public AuthContorllerTest(@Autowired MockMvc mvc) {
         this.mvc = mvc;
     }
+    @Disabled("수정중")
     @DisplayName("[View][GET] 로그인 페이지 - 정상 호출")
     @Test
     public void givenNothing_whenTryLogin_thanReturnView() throws Exception {
