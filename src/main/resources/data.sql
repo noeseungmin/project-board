@@ -1,8 +1,8 @@
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
-    ('win', 'cos1234', 'Win', 'win@mail.com', 'I am Win.', now(), 'Win', now(), 'win')
+    ('win', '{noop}cos1234', 'Win', 'win@mail.com', 'I am Win.', now(), 'Win', now(), 'win')
 ;
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
-('win2', 'cos1234', 'Win2', 'win2@mail.com', 'I am Win2.', now(), 'win2', now(), 'win2')
+('win2', '{noop}cos1234', 'Win2', 'win2@mail.com', 'I am Win2.', now(), 'win2', now(), 'win2')
 ;
 
 -- 122 게시글
